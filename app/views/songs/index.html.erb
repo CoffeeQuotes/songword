@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Songs</h1>
+    <% @songs.each do |song| %>
+    <div class="col-md-4 text-center bg-warning">
+        <h2 class="page-header"><%= song.title %></h2>
+        <div class="well"> 
+          <h4><b>Artist </b><span class="label label-success"><%= song.artist %></span>
+          <b>Album</b> <span class="label label-primary"><%= song.album %></span></h4>
+        </div>  
+          <!-- <p class="lead"><%= song.description %></p> -->
+        <p class="lead"><%= truncate(song.lyrics) %></p>
+        <h5><%= truncate(song.englyrics) %></h5>
+        <div style = "padding: 0; padding-bottom: 12px" class="btn btn-group">
+        <%= link_to 'Show', song, :class => 'btn btn-primary' %>
+        <%= link_to 'Edit', edit_song_path(song), :class => 'btn btn-warning' %>
+        <%= link_to 'Destroy', song, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+    </div>
+    <% end %>
+
+<br>
+
+<%= link_to 'New Song', new_song_path %>
