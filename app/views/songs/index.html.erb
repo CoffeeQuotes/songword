@@ -1,21 +1,36 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="alert alert-info alert-dismissible" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <%= notice %>
+</p>
 
 <h1>Songs</h1>
     <% @songs.each do |song| %>
-    <div class="col-md-4 text-center bg-warning">
-        <h2 class="page-header"><%= song.title %></h2>
-        <div class="well"> 
-          <h4><b>Artist </b><span class="label label-success"><%= song.artist %></span>
-          <b>Album</b> <span class="label label-primary"><%= song.album %></span></h4>
-        </div>  
-          <!-- <p class="lead"><%= song.description %></p> -->
-        <p class="lead"><%= truncate(song.lyrics) %></p>
-        <h5><%= truncate(song.englyrics) %></h5>
-        <div style = "padding: 0; padding-bottom: 12px" class="btn btn-group">
-        <%= link_to 'Show', song, :class => 'btn btn-primary' %>
-        <%= link_to 'Edit', edit_song_path(song), :class => 'btn btn-warning' %>
-        <%= link_to 'Destroy', song, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="col-md-4">
+      <div class="panel panel-default"> 
+        <div class="panel-heading">
+          <h2 class="panel-title page-header"><%= song.title %></h2>
+          <div class="well well-sm"> 
+            <h4>
+              <b>Artist </b>
+                <span class="label label-success"><%= song.artist %></span>
+              <b>Album</b> 
+                <span class="label label-primary"><%= song.album %></span>
+            </h4>
+          </div>
         </div>
+        <div class ="panel-body">    
+            <!-- <p class="lead"><%= song.description %></p> -->
+          <h2><%= truncate(song.lyrics) %></h2>
+          
+          <h3><%= truncate(song.englyrics) %></h3>
+            
+          <div style = "padding: 0; padding-bottom: 12px" class="btn-group btn-group-justified">
+          <%= link_to 'Show', song, :class => 'btn btn-primary' %>
+          <%= link_to 'Edit', edit_song_path(song), :class => 'btn btn-warning' %>
+          <%= link_to 'Destroy', song, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      </div>
     </div>
     <% end %>
 

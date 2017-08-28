@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :song_title %>
+    <%= form.text_field :title, id: :song_title, :class => 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :artist %>
-    <%= form.text_field :artist, id: :song_artist %>
+    <%= form.text_field :artist, id: :song_artist, :class => 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :album %>
-    <%= form.text_field :album, id: :song_album %>
+    <%= form.text_field :album, id: :song_album, :class => 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :song_description %>
+    <%= form.text_area :description, id: :song_description, :class => 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :lyrics %>
-    <%= form.text_area :lyrics, id: :song_lyrics %>
+    <%= form.text_area :lyrics, id: :song_lyrics, :size => '30x10', :class => 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label 'English Lyrics' %>
-    <%= form.text_area :englyrics, id: :song_englyrics %>
+    <%= form.text_area :englyrics, id: :song_englyrics, :size => '30x10', :class => 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions form-group">
+    <%= form.submit :class => 'btn btn-primary' %>
   </div>
 <% end %>

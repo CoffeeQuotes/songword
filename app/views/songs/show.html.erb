@@ -1,34 +1,35 @@
-<p id="notice"><%= notice %></p>
-
+<p id="notice" class="alert alert-info alert-dismissible" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<%= notice %>
+</p>
+<div class="row text-center">
 <p>
-  <strong>Title:</strong>
-  <%= @song.title %>
+  <h1 class="page-header"><%= @song.title %></h1>
 </p>
 
-<p>
-  <strong>Artist:</strong>
-  <%= @song.artist %>
-</p>
+<h4>
+  <b>Artist </b>
+    <span class="label label-success"><%= @song.artist %></span>
+  <b>Album</b> 
+    <span class="label label-primary"><%= @song.album %></span>
+  </h4>
 
-<p>
-  <strong>Album:</strong>
-  <%= @song.album %>
-</p>
-
-<p>
-  <strong>Description:</strong>
+<p class="lead">
+  <strong>Description -</strong>
   <%= @song.description %>
 </p>
-
-<p>
-  <strong>Lyrics:</strong>
-  <%= simple_format(@song.lyrics) %>
-</p>
-
-<p>
-  <strong>Englyrics:</strong>
-  <%= simple_format(@song.englyrics) %>
-</p>
-
+  <div class="col-md-6">
+    <p>
+      <h2><strong>Lyrics</strong></h2>
+      <%= simple_format(@song.lyrics) %>
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p>
+      <h2><strong>English lyrics</strong></h2>
+      <%= simple_format(@song.englyrics) %>
+    </p>
+  </div>
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>
+</div>
