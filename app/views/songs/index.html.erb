@@ -25,8 +25,10 @@
             
           <div style = "padding: 0; padding-bottom: 12px" class="btn-group btn-group-justified">
           <%= link_to 'Show', song, :class => 'btn btn-primary' %>
+          <% if song.user == current_user %>
           <%= link_to 'Edit', edit_song_path(song), :class => 'btn btn-warning' %>
           <%= link_to 'Destroy', song, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
           </div>
         </div>
       </div>

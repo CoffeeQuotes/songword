@@ -11,6 +11,8 @@
     <span class="label label-success"><%= @song.artist %></span>
   <b>Album</b> 
     <span class="label label-primary"><%= @song.album %></span>
+  <b>Added By</b> 
+    <span class="label label-primary"><%= @song.user.email %></span>  
   </h4>
 
 <p class="lead">
@@ -35,6 +37,8 @@
  <h2>Add a Word: </h2>
     <%= render 'words/form' %>
  </div>
+<% if @song.user == current_user %> 
 <%= link_to 'Edit', edit_song_path(@song) %> |
+<% end %>
 <%= link_to 'Back', songs_path %>
 </div>
