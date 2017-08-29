@@ -1,0 +1,30 @@
+<% @song.words.each do |word| %>
+ <div class="panel panel-default">
+ <div class="panel-heading">   
+    <h2 class="panel-title"><%= word.mot %></h2>
+ </div>
+ <div class="panel-body">  
+ <table class="table">
+  <tr>
+    <th>Meaning: </th>
+    <td><%= word.meaning %></td> 
+  </tr>
+  <tr>
+    <th>Origin:</th>
+    <td><%= word.origin %></td> 
+  </tr>
+  <tr>
+    <th>Speech:</th>
+    <td><%= word.word_speech %></td> 
+  </tr>
+  <tr>
+    <th>Example:</th>
+    <td><%= word.example %></td> 
+  </tr>
+  <tr>
+    <td colspan="2"><%= link_to "Destroy Comment", [word.song, word],  method: :delete, data: { confirm: 'Are you sure super stupid?'} %><td>
+  </tr>
+  </table>
+</div>
+</div>  
+<% end %>

@@ -1,5 +1,4 @@
-<p id="notice" class="alert alert-info alert-dismissible" role="alert">
-<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<p id="notice">
 <%= notice %>
 </p>
 <div class="row text-center">
@@ -18,18 +17,24 @@
   <strong>Description -</strong>
   <%= @song.description %>
 </p>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <p>
       <h2><strong>Lyrics</strong></h2>
       <%= simple_format(@song.lyrics) %>
     </p>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <p>
       <h2><strong>English lyrics</strong></h2>
       <%= simple_format(@song.englyrics) %>
-    </p>
+    </p> 
   </div>
+ <div class="col-md-4 text-justify">
+ <h2>Words </h2>
+ <%= render 'words/words'%>
+ <h2>Add a Word: </h2>
+    <%= render 'words/form' %>
+ </div>
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>
 </div>

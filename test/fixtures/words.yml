@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mot: MyString
+  meaning: MyString
+  origin: MyString
+  type: 
+  example: MyText
+  song: one
+
+two:
+  mot: MyString
+  meaning: MyString
+  origin: MyString
+  type: 
+  example: MyText
+  song: two

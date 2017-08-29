@@ -1,0 +1,35 @@
+<%= form_for([@song, @song.words.build], :html => {:class => "form-horizontal"} ) do |f| %>
+   <div class="field form-group">
+    <%= f.label 'Word', :class => 'col-md-4' %>
+    <div class="col-md-8">
+    <%= f.text_field :mot, id: :mot_title, :class => 'form-control' %>
+    </div>
+   </div>
+   <div class="field form-group">
+    <%= f.label :meaning, :class => 'col-md-4' %>
+    <div class="col-md-8">
+    <%= f.text_area :meaning, id: :mot_meaning, :class => 'form-control' %>
+    </div>
+   </div>
+   <div class="field form-group">
+    <%= f.label :origin, :class => 'col-md-4' %>
+    <div class="col-md-8">
+    <%= f.text_area :origin, id: :mot_origin, :class => 'form-control' %>
+   </div>
+   </div>
+   <div class="field form-group">
+    <%= f.label :word_speech, :class => 'col-md-4' %>
+    <div class="col-md-8">
+    <%= f.text_area :word_speech, id: :mot_type, :class => 'form-control' %>
+   </div>
+   </div>
+   <div class="field form-group">
+    <%= f.label :example, :class => 'col-md-4' %>
+    <div class="col-md-8">
+    <%= f.text_area :example, id: :mot_example, :class => 'form-control' %>
+   </div>
+   </div>
+   <div class="field form-group">
+    <%= f.submit :class => 'btn btn-primary' %>
+   </div>
+<% end %>
