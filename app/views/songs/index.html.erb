@@ -1,23 +1,22 @@
-<h1 class="page-header text-center">Songs</h1>
+<h1 class="page-header page-title text-center">Songs</h1>
   <% @songs.each do |song| %>
   <div class="col-md-4 song-box">
     <div class="panel panel-default"> 
       <div class="panel-heading">
-        <h2 class="panel-title page-header"><%= song.title %></h2>
+        <h2 class="panel-title page-header"><span class="glyphicon glyphicon-music" aria-hidden="true"></span> <%= song.title %></h2>
         <div class="well well-sm"> 
-          <h4>
-            <b>Artist </b>
-              <span class="label label-success"><%= song.artist %></span>
-            <b>Album</b> 
-              <span class="label label-primary"><%= song.album %></span>
-          </h4>
+               <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Artist
+               <span class="label label-success"> <%= song.artist %></span>
+               &nbsp;&nbsp;&nbsp;&nbsp;
+               <span class="glyphicon glyphicon-sound-stereo" aria-hidden="true"></span> Album
+               <span class="label label-primary"><%= song.album %></span>     
         </div>
       </div>
       
       <div class ="panel-body">    
         
-        <h2><%= truncate(song.lyrics) %></h2>
-        <h3><%= truncate(song.englyrics) %></h3>
+        <h4><q><%= truncate(song.lyrics) %></q></h4>
+        <p><%= truncate(song.englyrics) %></p>
           
         <div class="btn-group btn-group-justified">
           <%= link_to 'View Lyrics', song, :class => 'btn btn-primary btn-sm' %>

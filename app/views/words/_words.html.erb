@@ -23,7 +23,7 @@
   </tr>
   <% if @song.user == current_user %> 
   <tr>
-    <td colspan="2"><%= link_to "Delete", [word.song, word], method: :delete, data: { confirm: 'Are you sure super stupid?'}, :class => "btn btn-danger btn-sm" %><td>
+    <td colspan="2"><%= link_to "Remove", [word.song, word], method: :delete, data: { confirm: 'Are you sure super stupid?'}, :class => "btn btn-danger btn-sm" %><td>
   </tr>
   <% end %>
   </table>

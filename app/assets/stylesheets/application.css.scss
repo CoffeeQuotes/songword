@@ -15,7 +15,87 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Poller+One');
 
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #591E45;
+  background-image: url(noisy-net.png); 
+  color: #fefefe;
+}
+p, table {
+  font-family: 'Work Sans', sans-serif; 
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Libre Baskerville', serif;
+}
+/* Navbar */
+.navbar-custom {
+  background-color: rgba(147,13,63,1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 0;
+}
+.navbar-brand {
+  font-family: 'Poller One', cursive;
+  color :  rgb(255,192,55); 
+}
+.navbar-custom ul > li > a {
+  color: rgb(253,71,93);/*color: #17202a;*/
+  font-family: 'Libre Baskerville', serif;
+}
 .song-box:nth-child(3n+4) {
    clear: left;
 }
+.page-header {
+  border-bottom: none;
+}
+.panel-title {
+  color: rgb(253,71,93);
+  font-weight: bolder;
+}
+.panel-default {
+  background-color: rgb(255,192,55);
+  border: none;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+
+}
+.panel-default > .panel-heading {
+  background-color: rgba( 247, 219, 112, 0.2);
+  background-color: rgba(147,13,63,1);
+  border: none;
+  color: white;
+}
+.panel-body h2 {
+  color: rgb(204,0,60);
+}
+.well {
+  border: none;
+  background: none;
+  margin-bottom: 0;
+}
+.panel-body {
+  text-align: center;
+}
+
+.btn {
+  border: none;
+}
+.btn-success, .label-success {
+  background-color: #7dcea0;
+}
+.btn-primary , .label-primary {
+  background-color: #5dade2;
+}
+.btn-warning {
+  background-color: #eb984e;
+}
+.btn-danger {
+  background-color:   #c0392b;
+}
+
+  
+
+
+
+
