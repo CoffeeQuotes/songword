@@ -1,40 +1,34 @@
-<p id="notice">
-  <%= notice %>
-</p>
-
-<h1>Songs</h1>
-    <% @songs.each do |song| %>
-    <div class="col-md-4">
-      <div class="panel panel-default"> 
-        <div class="panel-heading">
-          <h2 class="panel-title page-header"><%= song.title %></h2>
-          <div class="well well-sm"> 
-            <h4>
-              <b>Artist </b>
-                <span class="label label-success"><%= song.artist %></span>
-              <b>Album</b> 
-                <span class="label label-primary"><%= song.album %></span>
-            </h4>
-          </div>
-        </div>
-        <div class ="panel-body">    
-            <!-- <p class="lead"><%= song.description %></p> -->
-          <h2><%= truncate(song.lyrics) %></h2>
-          
-          <h3><%= truncate(song.englyrics) %></h3>
-            
-          <div style = "padding: 0; padding-bottom: 12px" class="btn-group btn-group-justified">
-          <%= link_to 'Show', song, :class => 'btn btn-primary' %>
-          <% if song.user == current_user %>
-          <%= link_to 'Edit', edit_song_path(song), :class => 'btn btn-warning' %>
-          <%= link_to 'Destroy', song, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-          </div>
+<h1 class="page-header text-center">Songs</h1>
+  <% @songs.each do |song| %>
+  <div class="col-md-4 song-box">
+    <div class="panel panel-default"> 
+      <div class="panel-heading">
+        <h2 class="panel-title page-header"><%= song.title %></h2>
+        <div class="well well-sm"> 
+          <h4>
+            <b>Artist </b>
+              <span class="label label-success"><%= song.artist %></span>
+            <b>Album</b> 
+              <span class="label label-primary"><%= song.album %></span>
+          </h4>
         </div>
       </div>
-    </div>
-    <% end %>
-
-<br>
-
-<%= link_to 'New Song', new_song_path %>
+      
+      <div class ="panel-body">    
+        
+        <h2><%= truncate(song.lyrics) %></h2>
+        <h3><%= truncate(song.englyrics) %></h3>
+          
+        <div class="btn-group btn-group-justified">
+          <%= link_to 'View Lyrics', song, :class => 'btn btn-primary btn-sm' %>
+          <% if song.user == current_user %>
+              <%= link_to 'Edit Lyrics', edit_song_path(song), :class => 'btn btn-warning btn-sm' %>
+              <%= link_to 'Delete Lyrics', song, :class => 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div> <!-- btn-group-justified -->
+      
+      </div> <!--panel-body-->
+    
+    </div> <!--Panel-default-->
+  </div> <!--Col-md-4-->
+  <% end %>

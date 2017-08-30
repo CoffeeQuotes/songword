@@ -15,3 +15,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.song-box:nth-child(3n+4) {
+   clear: left;
+}

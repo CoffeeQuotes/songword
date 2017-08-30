@@ -1,24 +1,21 @@
-<p id="notice">
-<%= notice %>
-</p>
 <div class="row text-center">
-<p>
-  <h1 class="page-header"><%= @song.title %></h1>
-</p>
+  <p>
+    <h1 class="page-header"><%= @song.title %></h1>
+  </p>
 
-<h4>
-  <b>Artist </b>
-    <span class="label label-success"><%= @song.artist %></span>
-  <b>Album</b> 
-    <span class="label label-primary"><%= @song.album %></span>
-  <b>Added By</b> 
-    <span class="label label-primary"><%= @song.user.email %></span>  
+  <h4>
+    <b>Artist </b>
+      <span class="label label-success"><%= @song.artist %></span>
+    <b>Album</b> 
+      <span class="label label-primary"><%= @song.album %></span>
+    <b>Added By</b> 
+      <span class="label label-primary"><%= @song.user.email %></span>  
   </h4>
 
-<p class="lead">
-  <strong>Description -</strong>
-  <%= @song.description %>
-</p>
+  <p class="lead">
+    <strong>Description -</strong>
+    <%= @song.description %>
+  </p>
   <div class="col-md-4">
     <p>
       <h2><strong>Lyrics</strong></h2>
@@ -32,13 +29,23 @@
     </p> 
   </div>
  <div class="col-md-4 text-justify">
- <h2>Words </h2>
- <%= render 'words/words'%>
- <% if @song.user == current_user %> 
- <h2>Add a Word: </h2>
+    <h2>Words </h2>
+    <%= render 'words/words'%>
+    <% if @song.user == current_user %> 
+  <h2>Add a Word: </h2>
     <%= render 'words/form' %>
+    <% end %>
  </div>
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<% end %>
-<%= link_to 'Back', songs_path %>
+ <div class="col-md-12 text-justify">
+  <br><br>
+    <% if @song.user == current_user %> 
+    <div class="btn-group pull-left">
+    <%= link_to 'Edit Lyrics', edit_song_path(@song), :class => 'btn btn-warning btn-sm' %>
+    <%= link_to 'Delete Lyrics', @song, :class => 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div> 
+    <% end %>
+    <%= link_to 'Back', songs_path, :class => 'btn btn-primary pull-right btn-sm' %>
+    <div class="clearfix"></div>
+  <br><br> 
+  </div>
 </div>
