@@ -1,33 +1,37 @@
 <h1 class="page-header page-title text-center">Songs</h1>
-  <% @songs.each do |song| %>
-  <div class="col-md-4 song-box">
-    <div class="panel panel-default"> 
-      <div class="panel-heading">
-        <h2 class="panel-title page-header"><span class="glyphicon glyphicon-music" aria-hidden="true"></span> <%= song.title %></h2>
-        <div class="well well-sm"> 
-               <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Artist
-               <span class="label label-success"> <%= song.artist %></span>
-               &nbsp;&nbsp;&nbsp;&nbsp;
-               <span class="glyphicon glyphicon-sound-stereo" aria-hidden="true"></span> Album
-               <span class="label label-primary"><%= song.album %></span>     
-        </div>
-      </div>
-      
-      <div class ="panel-body">    
-        
-        <h4><q><%= truncate(song.lyrics) %></q></h4>
-        <p><%= truncate(song.englyrics) %></p>
+  <% @songs.each_slice(3) do |songs| %>
+  <div class="row">
+      <% songs.each do |song| %>
+      <div class="col-md-4 song-box">
+        <div class="panel panel-default"> 
+          <div class="panel-heading">
+            <h2 class="panel-title page-header"><span class="glyphicon glyphicon-music" aria-hidden="true"></span> <%= song.title %></h2>
+            <div class="well well-sm"> 
+                   <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Artist
+                   <span class="label label-success"> <%= song.artist %></span>
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                   <span class="glyphicon glyphicon-sound-stereo" aria-hidden="true"></span> Album
+                   <span class="label label-primary"><%= song.album %></span>     
+            </div>
+          </div>
           
-        <div class="btn-group btn-group-justified">
-          <%= link_to 'View Lyrics', song, :class => 'btn btn-primary btn-sm' %>
-          <% if song.user == current_user %>
-              <%= link_to 'Edit Lyrics', edit_song_path(song), :class => 'btn btn-warning btn-sm' %>
-              <%= link_to 'Delete Lyrics', song, :class => 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-        </div> <!-- btn-group-justified -->
-      
-      </div> <!--panel-body-->
-    
-    </div> <!--Panel-default-->
-  </div> <!--Col-md-4-->
-  <% end %>
+          <div class ="panel-body">    
+            
+            <h4><q><%= truncate(song.lyrics) %></q></h4>
+            <p><%= truncate(song.englyrics) %></p>
+              
+            <div class="btn-group btn-group-justified">
+              <%= link_to 'View Lyrics', song, :class => 'btn btn-primary btn-sm' %>
+              <% if song.user == current_user %>
+                  <%= link_to 'Edit Lyrics', edit_song_path(song), :class => 'btn btn-warning btn-sm' %>
+                  <%= link_to 'Delete Lyrics', song, :class => 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </div> <!-- btn-group-justified -->
+          
+          </div> <!--panel-body-->
+        
+        </div> <!--Panel-default-->
+      </div> <!--Col-md-4-->
+      <% end %>
+    </div>
+  <% end %>   

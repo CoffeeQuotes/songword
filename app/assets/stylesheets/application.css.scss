@@ -44,9 +44,13 @@ h1, h2, h3, h4, h5, h6 {
   color: rgb(253,71,93);/*color: #17202a;*/
   font-family: 'Libre Baskerville', serif;
 }
-.song-box:nth-child(3n+4) {
+.navbar-custom ul > li > a:hover, .navbar-custom ul > li > a:focus {
+  background-color: transparent;
+  color: #D2691E;
+} 
+/*.song-box:nth-child(3n+4) {
    clear: left;
-}
+}*/
 .page-header {
   border-bottom: none;
 }
@@ -76,22 +80,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 .panel-body {
   text-align: center;
+  color: #333;
 }
 
 .btn {
   border: none;
 }
 .btn-success, .label-success {
-  background-color: #7dcea0;
+  background-color: #0E6251;
 }
 .btn-primary , .label-primary {
-  background-color: #5dade2;
+  background-color: #581845;
 }
 .btn-warning {
-  background-color: #eb984e;
+  background-color: #D2691E;
 }
 .btn-danger {
-  background-color:   #c0392b;
+  background-color:   #C70039;
 }
 
 input, select, textarea{
@@ -101,7 +106,79 @@ input, select, textarea{
 textarea:focus, input:focus {
     color: #591E45;
 }  
+#notice_wrapper {
+   position: absolute;
+   top: 0; 
+   width: 100%;
+   z-index: 999;
+   background-color: rgba(255,255,255,0.5);
+   .alert, .notice {
+     padding: 1.6rem 0;
+     text-align: center;
+     margin: 0;
+     font-family: 1.25rem;
+     font-weight: 700;
+     color: #333;
+     letter-spacing: 1px;
+   }
+}
 
+.word-table {
+  color: #C4163F;
+  border: none;
+  margin-bottom: 0;
+}
+.word-table tbody > tr > td, .word-table tbody > tr > th {
+  vertical-align: center;
+  border: none;
+}
+.word-table tbody > tr > td {
+  border-bottom: 1px solid #C4163F;
+}
+.word-body-panel {
+  padding: 0;
+}
+.word-delete {
+  text-align: left;
+  padding-bottom: 0;
+}
+.btn-login {
+  background-color: #66CDAA;
+  color: #fefefe;
+}
+.btn-login:hover, .btn-login:focus {
+  background-color: #fefefe;
+  color: #66CDAA;
+}
 
-
+.login-form {
+  background-color: rgba(14, 98, 81, 0.6);
+  padding-bottom: 20px;
+  margin: 10px 20px 60px 0;
+}
+.login-form > a {
+ color: #66CDAA; 
+}
+.login-box {
+  background-image: url(login.jpg);
+  background-size: cover;
+}
+#error_explanation {
+  background-color: orangered;
+  border: none;
+  width: 100%;
+}
+#error_explanation h2 {
+  background-color: tomato;
+  padding: 1em;
+}
+#error_explanation ul li {
+  list-style: none;
+  padding: 0.5em 0;
+}
+.field_with_errors {
+  padding: 4px 20px;
+  background-color: orangered;
+  border-radius: 6px;
+}
 
