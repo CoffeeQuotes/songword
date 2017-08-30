@@ -34,10 +34,10 @@
  <div class="col-md-4 text-justify">
  <h2>Words </h2>
  <%= render 'words/words'%>
+ <% if @song.user == current_user %> 
  <h2>Add a Word: </h2>
     <%= render 'words/form' %>
  </div>
-<% if @song.user == current_user %> 
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <% end %>
 <%= link_to 'Back', songs_path %>
