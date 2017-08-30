@@ -94,7 +94,13 @@ h1, h2, h3, h4, h5, h6 {
   background-color:   #c0392b;
 }
 
-  
+input, select, textarea{
+    color: #591E45;
+}
+
+textarea:focus, input:focus {
+    color: #591E45;
+}  
 
 
 
