@@ -1,4 +1,4 @@
 # README
 
-This is my first Ruby on rails app, I still learning.
-shishirkumarsongword.herokuapp.com
+This is my first Ruby on rails app, I am still learning.
+https://shishirkumarsongword.herokuapp.com/
